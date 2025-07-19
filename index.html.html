@@ -1,0 +1,236 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Poetry</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fef6f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, main, footer {
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #d17878;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .product {
+            border: 1px solid #e5d4d4;
+            background: #fff;
+            border-radius: 10px;
+            margin: 1rem;
+            padding: 1rem;
+            display: inline-block;
+            width: 280px;
+            vertical-align: top;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .btn {
+            background: #e8a0a0;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        footer {
+            background: #f9dcdc;
+            margin-top: 2rem;
+        }
+        #order-form {
+            display: none;
+            margin-top: 2rem;
+        }
+        input, textarea {
+            width: 80%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стихотворение и бутон Прочети още */
+        #poem-container {
+            max-width: 600px;
+            margin: 1rem auto;
+            background: #fff0f0;
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            color: #611;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        #morePoem {
+            display: none;
+            margin-top: 1rem;
+        }
+        #togglePoemBtn {
+            display: block;
+            margin: 1rem auto 0 auto;
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #togglePoemBtn:hover {
+            background-color: #b52b5a;
+        }
+    </style>
+    <script>
+        function showOrderForm(productName) {
+            const form = document.getElementById('order-form');
+            form.style.display = 'block';
+            document.getElementById('product').value = productName;
+            window.location.href = '#order';
+        }
+        function togglePoem() {
+            const morePoem = document.getElementById('morePoem');
+            const btn = document.getElementById('togglePoemBtn');
+            if (morePoem.style.display === 'none' || morePoem.style.display === '') {
+                morePoem.style.display = 'block';
+                btn.textContent = 'Прочети по-малко';
+            } else {
+                morePoem.style.display = 'none';
+                btn.textContent = 'Прочети още';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Dream Poetry</h1>
+        <p>Поезия и продукти с душа</p>
+    </header>
+
+    <nav>
+        <a href="#home">Начало</a>
+        <a href="#products">Артикули</a>
+        <a href="#order">Поръчки</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Добре дошли в Dream Poetry</h2>
+            <p>Открийте нашите вдъхновяващи книги и ръчно изработени продукти с послания.</p>
+
+            <!-- Тук е стихотворението с прочети още -->
+            <div id="poem-container">
+                <p><strong>Трите рози</strong></p>
+                <p>Червена - алена, пъстра с обич и любов.<br>
+                Подарена с много чувство и нов живот.<br>
+                Прекрасна, неотразима - Блага стихия.<br>
+                Като вино, алено сърце- нашето Битие.<br>
+                Розова - нежна, свежа, игрива.<br>
+                Розата на щастието… определено е.<br>
+                Невинна като дете, отрази моето сърце.<br>
+                Показва обичта на една светеща душа.<br>
+                Бяла - благодатна, чиста съдба.<br>
+                Носи здраве и благодарност.<br>
+                Бяла птица, бяла чистота.<br>
+                Красота прелива, носи доброта.</p>
+
+                <div id="morePoem">
+                    <p>Червената роза пламти с жар и страст,<br>
+                    като огън в сърцето ми, нежна и власт.<br>
+                    Тя разказва за любов без край,<br>
+                    за топлина, в която няма страх и лъжа.</p>
+
+                    <p>Розовата играе сред слънчеви лъчи,<br>
+                    като дете, което смее се на дъждовни капки.<br>
+                    Тя шепти надежда и весели песни,<br>
+                    подарява усмивки и мечти без граници.</p>
+
+                    <p>Белата роза е мир и покой,<br>
+                    спокойна и светла, като лунна нощ.<br>
+                    Тя дарява душата с хармония и мир,<br>
+                    чистота и сила, които никой не може да изтрие.</p>
+                </div>
+
+                <button id="togglePoemBtn" onclick="togglePoem()">Прочети още</button>
+            </div>
+        </section>
+
+        <section id="products">
+            <h2>Нашите артикули</h2>
+            <div class="product">
+                <a href="/mnt/data/product_3445.jpg" target="_blank">
+                    <img src="/mnt/data/product_3445.jpg" alt="Кутия Dream Poetry">
+                </a>
+                <h3>Подаръчна кутия</h3>
+                <p>Съдържа книга, чаша и тениска. Перфектен подарък. <br><strong>Цена: 60 лв</strong></p>
+                <button class="btn" onclick="showOrderForm('Подаръчна кутия')">Купи</button>
+            </div>
+            <div class="product">
+                <a href="/mnt/data/product_3447.jpg" target="_blank">
+                    <img src="/mnt/data/product_3447.jpg" alt="Чаша Dream Poetry">
+                </a>
+                <h3>Чаша с вдъхновяващ цитат</h3>
+                <p>"Живей тук и сега!" <br><strong>Цена: 10 лв</strong></p>
+                <button class="btn" onclick="showOrderForm('Чаша')">Купи</button>
+            </div>
+            <div class="product">
+                <a href="/mnt/data/thumb_3448.jpg" target="_blank">
+                    <img src="/mnt/data/thumb_3448.jpg" alt="Тениска Dream Poetry">
+                </a>
+                <h3>Тениска</h3>
+                <p>"Жената е като диамант, блести дори в нощта!" <br><strong>Цена: 18 лв</strong></p>
+                <button class="btn" onclick="showOrderForm('Тениска')">Купи</button>
+            </div>
+            <div class="product">
+                <img src="" alt="Книга Свежест в сивотата">
+                <h3>Книга "Свежест в сивотата"</h3>
+                <p>Поезия от Савина Николова. <br><strong>Цена: 20 лв</strong></p>
+                <button class="btn" onclick="showOrderForm('Свежест в сивотата')">Купи</button>
+            </div>
+            <div class="product">
+                <img src="" alt="Книга Шепа обич">
+                <h3>Книга "Шепа обич"</h3>
+                <p>Вдъхновяваща и топла. <br><strong>Цена: 20 лв</strong></p>
+                <button class="btn" onclick="showOrderForm('Шепа обич')">Купи</button>
+            </div>
+            <div class="product">
+                <img src="" alt="Еко торбичка">
+                <h3>Еко торбичка</h3>
+                <p>100% органичен памук, свеж авторски дизайн. <br><strong>Цена: 20 лв</strong></p>
+                <button class="btn" onclick="showOrderForm('Еко торбичка')">Купи</button>
+            </div>
+        </section>
+
+        <section id="order">
+            <h2>Направи поръчка</h2>
+            <form id="order-form">
+                <input type="text" id="product" name="product" placeholder="Продукт" readonly><br>
+                <input type="text" name="name" placeholder="Име на клиента" required><br>
+                <input type="text" name="city" placeholder="Град" required><br>
+                <input type="tel" name="phone" placeholder="Телефон" required><br>
+                <textarea name="note" placeholder="Допълнителна информация"></textarea><br>
+                <p>Изпрати поръчката си с горната информация на имейл: <strong>savinasavova01@gmail.com</strong> или на телефон: <strong>0896155269</strong></p>
+                <p>или директно през Instagram: <strong>@dreampoetry1</strong></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Контакт: savinasavova01@gmail.com | Телефон: 0896155269 | Instagram: <a href="https://instagram.com/dreampoetry1">@dreampoetry1</a></p>
+        <p>&copy; 2025 Dream Poetry</p>
+    </footer>
+</body>
+</html>html>
