@@ -1,2 +1,2 @@
-# Dream-Poetry
+# Dream Poetry
 dreampoetry
